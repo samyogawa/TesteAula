@@ -1,4 +1,4 @@
-public class Aluno extends Pessoa {
+public class AlunoXXXX extends Pessoa {
 
 	private Matricula matricula;
 
