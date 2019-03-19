@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoFiap.ClientePage"
+             Title="Dados Pessoais">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Dados Pessoais">
+                        <EntryCell x:Name="EntryNome"    Label="Nome:"    Placeholder="Antonio"/>
+                        <EntryCell x:Name="EntrySobrenome"    Label="Sobrenome:"    Placeholder="Coutinho"/>
+                    </TableSection>
+                    <TableSection Title="Dados Complementares">
+                        <SwitchCell x:Name="SwitchPublica" Text="Pessoa Pública"/>
+                        <ImageCell x:Name="Image" Text="foto" ImageSource="icon.png"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Idade:"/>
+                                <Slider x:Name="SliderIdade"  HorizontalOptions="FillAndExpand" Scale="1" Maximum="140" Minimum="18"/>
+
+                            </StackLayout>
+                            
+                        </ViewCell>
+                        
+                    </TableSection>
+                    
+                </TableRoot>
+                         
+            </TableView>
+            <Label Text="Perfil:"/>
+            <ListView x:Name="ListViewPerfis"  VerticalOptions="StartAndExpand"   HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding nomePerfil}"   Detail="{Binding .}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+  </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

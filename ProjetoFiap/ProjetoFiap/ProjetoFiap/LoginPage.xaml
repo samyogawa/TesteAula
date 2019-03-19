@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoFiap.LoginPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Nome" FontSize="Large"></Label>
+                <Entry x:Name="EntryNome" 
+                       Placeholder="Antonio Coutinho" 
+                       FontSize="Large"></Entry>
+                
+                <Label Text="Descrição" FontSize="Large"></Label>
+                <Editor x:Name="EditorDescricao" 
+                        HeightRequest="180" 
+                        FontSize="Large" 
+                        BackgroundColor="LightGray"></Editor>
+
+                <Label Text="Idade" FontSize="Large"></Label>
+                <Slider x:Name="SliderIdade" 
+                        Scale="1"
+                        Maximum="140" 
+                        Minimum="18"/>
+
+                <Label Text="Patrimônio (milhares)" 
+                       FontSize="Large"></Label>
+                <Stepper x:Name="StepPatrimonio"
+                         Increment="1"
+                         Minimum="0"
+                         Maximum="10"
+                         Value="2"/>
+
+                <ListView x:Name="ListViewPerfis"
+                          VerticalOptions="FillAndExpand" 
+                          HorizontalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding .}" 
+                                       FontSize="Large"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button x:Name="BotaoGravar" 
+                        Text="Gravar" 
+                        FontSize="Large"></Button>
+            </StackLayout>
+        </ScrollView>
+        
+        
+        <!--
+        <StackLayout VerticalOptions="Center" Margin="64">
+            <Image Source="https://dummyimage.com/500x500/8f1b8f/ffffff.png" ></Image>
+            <Entry x:Name="EntryUsuario" Placeholder="Usuário" Text=""></Entry>
+            <Entry x:Name="EntrySenha" Placeholder="Senha" Text="" IsPassword="True"></Entry>
+            <Button x:Name="BotaoEntrar" Text="Entrar"></Button>
+        </StackLayout>
+        -->
+        
+        
+    </ContentPage.Content>
+</ContentPage>
